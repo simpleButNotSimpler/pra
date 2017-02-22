@@ -9,16 +9,16 @@ close all;
 %     im1 = imread('pics/08.bmp');
 
     %color palmprint
-%     im1 = imread('IMG_001 (1).JPG');
-%     im2 = imread('IMG_001 (2).JPG');
+    im1 = imread('IMG_001 (1).JPG');
+    im2 = imread('IMG_001 (2).JPG');
 %     im1 = imread('IMG_002 (2).JPG');
 %     im2 = imread('IMG_002 (3).JPG');
 %     im1 = imread('IMG_003 (3).JPG');
 %     im2 = imread('IMG_003 (4).JPG');
 %     im1 = imread('IMG_004 (4).JPG');
 %     im2 = imread('IMG_004 (5).JPG');
-    im1 = imread('IMG_005 (5).JPG');
-    im2 = imread('IMG_005 (6).JPG');
+%     im1 = imread('IMG_005 (5).JPG');
+%     im2 = imread('IMG_005 (6).JPG');
 
     %extract the layers
 %     imr = im1(:, :, 1);
@@ -59,19 +59,19 @@ close all;
     figure;
 %     set(gcf, 'PaperOrientation', 'portrait');
     subplot(2, 5, 1), imshow(imb1), title('original'); hold on;
-    subplot(2, 5, 2), imshow(imfirstedge1), title('1st edge response');
-    subplot(2, 5, 3), imshow(imsecondedge1), title('2ndedge response');
+    subplot(2, 5, 2), imshow(imfirstedge1), title('1st e-resp');
+    subplot(2, 5, 3), imshow(imsecondedge1), title('2nd e-resp');
     subplot(2, 5, 4), imshow(imfirstcanny1), title('1st e-resp canny');
     subplot(2, 5, 5), imshow(imsecondcanny1), title('2nd e-resp canny'); 
     subplot(2, 5, 6), imshow(imb2), title('original');
-    subplot(2, 5, 7), imshow(imfirstedge2), title('1st edge response');
-    subplot(2, 5, 8), imshow(imsecondedge2), title('2ndedge response');
+    subplot(2, 5, 7), imshow(imfirstedge2), title('1st e-resp');
+    subplot(2, 5, 8), imshow(imsecondedge2), title('2nd e-resp');
     subplot(2, 5, 9), imshow(imfirstcanny2), title('1st e-resp canny');
     subplot(2, 5, 10), imshow(imsecondcanny2), title('2nd e-resp canny');
     hold off;
 
 %     saveas(gcf,'person1 - im1.png');
-    saveas(gcf,[pwd '/imdemo/person5-im1-&-im2.png']);
+%     saveas(gcf,[pwd '/imdemo/person5-im1-&-im2.png']);
       
     
     %%  this section is to test additional feature
