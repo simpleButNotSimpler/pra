@@ -1,4 +1,4 @@
-function image = cannys(im, tl, th)
+function [image, E] = cannys(im, tl, th)
     %blur the image
 %     imblur = imgaussfilt(im);
     
@@ -21,7 +21,7 @@ function image = cannys(im, tl, th)
 %     immag = imcomplement(immag);
        
     %non-maximum supression
-    image = thinAndThreshold(imx, imy, im, tl, th);
+    [image, E] = thinAndThreshold(imx, imy, im, tl, th);
 end
 
 
@@ -29,7 +29,7 @@ end
 %
 %   Local Function : thinAndThreshold
 %
-function H = thinAndThreshold(dx, dy, magGrad, lowThresh, highThresh)
+function [H, E] = thinAndThreshold(dx, dy, magGrad, lowThresh, highThresh)
 % Perform Non-Maximum Suppression Thining and Hysteresis Thresholding of
 % Edge Strength
     

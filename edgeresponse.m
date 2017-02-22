@@ -42,5 +42,5 @@ function image = edgeresponse(im, resp)
           
 %       image = imadjust(image);
 %       subplot(4, 3, 11), imshow(image), title('combined max');
-        hold off;
+%         hold off;
 end
