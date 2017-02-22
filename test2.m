@@ -30,12 +30,8 @@ close all;
     
     %edge response
     imfirstedge = edgeresponse(imb, 'max'); 
-%     imfirstedge = imadjust(imfirstedge);
     imsecondedge = edgeresponse(imcomplement(imfirstedge), 'max');
-    imsecondedge = edgeresponse(imcomplement(imsecondedge), 'max');
-    imsecondedge = edgeresponse(imcomplement(imsecondedge), 'max');
-    imsecondedge = edgeresponse(imcomplement(imsecondedge), 'max');
-%     imsecondedge = imadjust(imsecondedge);
+%     imsecondedge = edgeresponse(imcomplement(imsecondedge), 'max');
     
     %canny
     %first edge response
@@ -58,7 +54,7 @@ close all;
     subplot(2, 3, 6), imshow(imsecondcanny), title('2nd e-resp canny'); hold off;
 
 %     saveas(gcf,'person1 - im1.png');
-    saveas(gcf,[pwd '/imdemo/person5 - im2.png']);
+%     saveas(gcf,[pwd '/imdemo/person5 - im2.png']);
       
     
     %%  this section is to test additional feature
