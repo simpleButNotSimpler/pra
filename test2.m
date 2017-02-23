@@ -9,16 +9,16 @@ close all;
 %     im1 = imread('pics/08.bmp');
 
     %color palmprint
-%     im1 = imread('IMG_001 (1).JPG');
-%     im1 = imread('IMG_001 (2).JPG');
-%     im1 = imread('IMG_002 (2).JPG');
-%     im1 = imread('IMG_002 (3).JPG');
-    im1 = imread('IMG_003 (3).JPG');
-%     im1 = imread('IMG_003 (4).JPG');
-%     im1 = imread('IMG_004 (4).JPG');
-%     im1 = imread('IMG_004 (5).JPG');
-%     im1 = imread('IMG_005 (5).JPG');
-%     im1 = imread('IMG_005 (6).JPG');
+    im1 = imread('colorpics/IMG_001 (1).JPG');
+%     im1 = imread('colorpics/IMG_001 (2).JPG');
+%     im1 = imread('colorpics/IMG_002 (2).JPG');
+%     im1 = imread('colorpics/IMG_002 (3).JPG');
+%      im1 = imread('colorpics/IMG_003 (3).JPG');
+%     im1 = imread('colorpics/IMG_003 (4).JPG');
+%     im1 = imread('colorpics/IMG_004 (4).JPG');
+%     im1 = imread('colorpics/IMG_004 (5).JPG');
+%     im1 = imread('colorpics/IMG_005 (5).JPG');
+%     im1 = imread('colorpics/IMG_005 (6).JPG');
 
     %extract the layers
 %     imr = im1(:, :, 1);
@@ -27,12 +27,14 @@ close all;
     imgray = rgb2gray(im1);
     
     imb = im2double(imgray);
+%     imb = imadjust(imb);
     
-    %edge response
+%     %edge response
     imfirstedge = edgeresponse(imb, 'max'); 
     imsecondedge = edgeresponse(imcomplement(imfirstedge), 'max');
-%     imsecondedge = edgeresponse(imcomplement(imsecondedge), 'max');
-    
+    imsecondedge = edgeresponse(imcomplement(imsecondedge), 'max');
+% %     imsecondedge = edgeresponse(imcomplement(imsecondedge), 'max');
+  
     %canny
     %first edge response
     tlow = percentile(imfirstedge, 12);
@@ -41,7 +43,7 @@ close all;
     
     %second edge response
     tlow = percentile(imsecondedge, 90);
-    thigh = percentile(imsecondedge, 70);
+    thigh = percentile(imsecondedge, 80);
     [imsecondcanny, template] = cannys(imsecondedge, tlow, thigh);
     
     figure;
