@@ -9,16 +9,16 @@ close all;
 %     im1 = imread('pics/08.bmp');
 
     %color palmprint
-    im1 = imread('IMG_001 (1).JPG');
-    im2 = imread('IMG_001 (2).JPG');
+%     im1 = imread('IMG_001 (1).JPG');
+%     im2 = imread('IMG_001 (2).JPG');
 %     im1 = imread('IMG_002 (2).JPG');
 %     im2 = imread('IMG_002 (3).JPG');
 %     im1 = imread('IMG_003 (3).JPG');
 %     im2 = imread('IMG_003 (4).JPG');
 %     im1 = imread('IMG_004 (4).JPG');
 %     im2 = imread('IMG_004 (5).JPG');
-%     im1 = imread('IMG_005 (5).JPG');
-%     im2 = imread('IMG_005 (6).JPG');
+    im1 = imread('IMG_005 (5).JPG');
+    im2 = imread('IMG_005 (6).JPG');
 
     %extract the layers
 %     imr = im1(:, :, 1);
