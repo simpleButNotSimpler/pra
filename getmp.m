@@ -1,4 +1,4 @@
-function [matchedPoints1, matchedPoints2] = getmp(I1, I2)
+function [matchedPoints1, matchedPoints2, points1, points2] = getmp(I1, I2)
     %Find the corners.
     points1 = detectHarrisFeatures(I1);
     points2 = detectHarrisFeatures(I2);
@@ -13,4 +13,7 @@ function [matchedPoints1, matchedPoints2] = getmp(I1, I2)
     %Retrieve the locations of the corresponding points for each image.
     matchedPoints1 = valid_points1(indexPairs(:,1),:);
     matchedPoints2 = valid_points2(indexPairs(:,2),:);
+    
+%     points1 = valid_points1;
+%     points2 = valid_points2;
 end

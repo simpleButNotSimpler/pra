@@ -13,12 +13,12 @@ close all;
 %     im1 = imread('IMG_001 (2).JPG');
 %     im1 = imread('IMG_002 (2).JPG');
 %     im1 = imread('IMG_002 (3).JPG');
-%     im1 = imread('IMG_003 (3).JPG');
+    im1 = imread('IMG_003 (3).JPG');
 %     im1 = imread('IMG_003 (4).JPG');
 %     im1 = imread('IMG_004 (4).JPG');
 %     im1 = imread('IMG_004 (5).JPG');
 %     im1 = imread('IMG_005 (5).JPG');
-    im1 = imread('IMG_005 (6).JPG');
+%     im1 = imread('IMG_005 (6).JPG');
 
     %extract the layers    
     imb = im2double(rgb2gray(im1));
@@ -26,7 +26,7 @@ close all;
     %edge response
     imfirstedge = edgeresponse(imb, 'max'); 
     imsecondedge = edgeresponse(imcomplement(imfirstedge), 'max');
-    imthirdedge = edgeresponse(imcomplement(imsecondedge), 'max');
+    imthirdedge = edgeresponse(imcomplement(imsecondedge*0.4), 'max');
     
     %canny
     %first
@@ -40,8 +40,8 @@ close all;
     [imsecondcanny, ~] = cannys(imsecondedge, tlow, thigh);
     
     %third
-    tlow = percentile(imthirdedge, 90);
-    thigh = percentile(imthirdedge, 70);
+    tlow = percentile(imthirdedge, 60);
+    thigh = percentile(imthirdedge, 40);
     [imthirdcanny, ~] = cannys(imthirdedge, tlow, thigh);    
     
     figure;
