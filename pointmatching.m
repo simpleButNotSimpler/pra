@@ -9,16 +9,16 @@ close all;
 %     im1 = imread('pics/08.bmp');
 
     %color palmprint
-    im1 = imread('IMG_001 (1).JPG');
-    im2 = imread('IMG_001 (2).JPG');
+%     im1 = imread('IMG_001 (1).JPG');
+%     im2 = imread('IMG_001 (2).JPG');
 %     im1 = imread('IMG_002 (2).JPG');
 %     im2 = imread('IMG_002 (3).JPG');
 %     im1 = imread('IMG_003 (3).JPG');
 %     im2 = imread('IMG_003 (4).JPG');
 %     im1 = imread('IMG_004 (4).JPG');
 %     im2 = imread('IMG_004 (5).JPG');
-%     im1 = imread('IMG_005 (5).JPG');
-%     im2 = imread('IMG_005 (6).JPG');
+    im1 = imread('IMG_005 (5).JPG');
+    im2 = imread('IMG_005 (6).JPG');
 
     %extract the layers
     imb1 = im2double(rgb2gray(im1));
@@ -63,27 +63,27 @@ close all;
     
   %match points in the image
   %first e-resp
-  [mp1, mp2] = getmp(imfirstedge1, imfirstedge2);
-  subplot(3, 4, 10), showMatchedFeatures(imfirstedge1, imfirstedge2, mp1, mp2);
+  [mp11, mp21] = getmp(imfirstedge1, imfirstedge2);
+  subplot(3, 4, 10), showMatchedFeatures(imfirstedge1, imfirstedge2, mp11, mp21);
   
    %second e-resp
-  [mp1, mp2] = getmp(imsecondedge1, imsecondedge2);
-  subplot(3, 4, 11), showMatchedFeatures(imsecondedge1, imsecondedge2, mp1, mp2);
+  [mp12, mp22] = getmp(imsecondedge1, imsecondedge2);
+  subplot(3, 4, 11), showMatchedFeatures(imsecondedge1, imsecondedge2, mp12, mp22);
    
    %third e-resp
-  [mp1, mp2] = getmp(imthirdedge1, imthirdedge2);
-  subplot(3, 4, 12), showMatchedFeatures(imthirdedge1, imthirdedge2, mp1, mp2);
+  [mp13, mp23] = getmp(imthirdedge1, imthirdedge2);
+  subplot(3, 4, 12), showMatchedFeatures(imthirdedge1, imthirdedge2, mp13, mp23);
     
     
     %plot
     subplot(3, 4, 1), imshow(imb1), title('original'); hold on;
-    subplot(3, 4, 2), imshow(imfirstedge1), title('1st e-resp');
-    subplot(3, 4, 3), imshow(imsecondedge1), title('2nd e-resp');
-    subplot(3, 4, 4), imshow(imthirdedge1), title('3rd e-resp canny');
+    subplot(3, 4, 2), imshow(imfirstedge1), title('1st e-resp'), hold on; mp11.plot ;
+    subplot(3, 4, 3), imshow(imsecondedge1), title('2nd e-resp'), hold on; mp12.plot;
+    subplot(3, 4, 4), imshow(imthirdedge1), title('3rd e-resp canny'), hold on; mp13.plot;
     subplot(3, 4, 5), imshow(imb2), title('original');
-    subplot(3, 4, 6), imshow(imfirstedge2), title('1st e-resp');
-    subplot(3, 4, 7), imshow(imsecondedge2), title('2nd e-resp');
-    subplot(3, 4, 8), imshow(imthirdedge2), title('3rd e-resp canny');
+    subplot(3, 4, 6), imshow(imfirstedge2), title('1st e-resp'), hold on; mp21.plot;
+    subplot(3, 4, 7), imshow(imsecondedge2), title('2nd e-resp'), hold on; mp22.plot;
+    subplot(3, 4, 8), imshow(imthirdedge2), title('3rd e-resp canny'), hold on; mp23.plot;
     hold off;
     
 
