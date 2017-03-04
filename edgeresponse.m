@@ -20,27 +20,12 @@ function image = edgeresponse(im, resp)
         im140 = imfilter(im, f140);
         im160 = imfilter(im, f160);
 
-        %print the images
-%         figure;
-%         subplot(4, 3, 1), imshow(im0), title('0 degree'); hold on
-%         subplot(4, 3, 2), imshow(im20), title('20 degree');
-%         subplot(4, 3, 3), imshow(im40), title('40 degree');
-%         subplot(4, 3, 4), imshow(im60), title('60 degree');
-%         subplot(4, 3, 5), imshow(im80), title('80 degree');
-%         subplot(4, 3, 6), imshow(im100), title('100 degree');
-%         subplot(4, 3, 7), imshow(im120), title('120 degree');
-%         subplot(4, 3, 8), imshow(im140), title('140 degree');
-%         subplot(4, 3, 9), imshow(im160), title('160 degree');
-%         subplot(4, 3, 10), imshow(im), title('original');
-
         %combined the images
         if strcmp(resp, 'max')
             image = maxresponse(im0, im20, im40, im60, im80, im100, im120, im140, im160);
         else
             image = minresponse(im0, im20, im40, im60, im80, im100, im120, im140, im160);
         end
-          
-%       image = imadjust(image);
-%       subplot(4, 3, 11), imshow(image), title('combined max');
-%         hold off;
+        
+%        image = imadjust(image);
 end
