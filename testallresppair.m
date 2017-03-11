@@ -26,21 +26,21 @@ function allresppair(im1, im2, idx)
     
     %canny
     %first im
-    tlow1 = percentile(imfirstedge1, 12); %threshold
-    thigh1 = percentile(imfirstedge1, 5); %threshold
+    tlow1 = percentile(imfirstedge1, 5); %threshold
+    thigh1 = percentile(imfirstedge1, 1); %threshold
     [imfirstcanny1, ~] = cannys(imfirstedge1, tlow1, thigh1);
     
-    tlow2 = percentile(imfirstedge2, 12); %threshold
-    thigh2 = percentile(imfirstedge2, 5); %threshold
-    [imfirstcanny2, ~] = cannys(imfirstedge2, tlow2, thigh2);
+    tlow2 = percentile(imsecondedge1, 8); %threshold
+    thigh2 = percentile(imsecondedge1, 5); %threshold
+    [imfirstcanny2, ~] = cannys(imsecondedge1, tlow2, thigh2);
     
     %second im
-    tlow1 = percentile(imsecondedge1, 60); %threshold
-    thigh1 = percentile(imsecondedge1, 20); %threshold
-    [imsecondcanny1, ~] = cannys(imsecondedge1, tlow1, thigh1);
+    tlow1 = percentile(imfirstedge2, 5); %threshold
+    thigh1 = percentile(imfirstedge2, 1); %threshold
+    [imsecondcanny1, ~] = cannys(imfirstedge2, tlow1, thigh1);
     
-    tlow2 = percentile(imsecondedge2, 60); %threshold
-    thigh2 = percentile(imsecondedge2, 20); %threshold
+    tlow2 = percentile(imsecondedge2, 8); %threshold
+    thigh2 = percentile(imsecondedge2, 5); %threshold
     [imsecondcanny2, ~] = cannys(imsecondedge2, tlow2, thigh2);
     
     %plotting

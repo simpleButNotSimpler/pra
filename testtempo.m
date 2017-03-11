@@ -30,29 +30,29 @@ function tempo(imb1, imb2, idx)
     
     %canny
     %first im
-    tlow1 = percentile(imfirstedge1, 12);
-    thigh1 = percentile(imfirstedge1, 5);
+    tlow1 = percentile(imfirstedge1, 5);
+    thigh1 = percentile(imfirstedge1, 1);
     [imfirstcanny1, ~] = cannys(imfirstedge1, tlow1, thigh1);
     
-    tlow2 = percentile(imsecondedge1, 40);
-    thigh2 = percentile(imsecondedge1, 20);
+    tlow2 = percentile(imsecondedge1, 8);
+    thigh2 = percentile(imsecondedge1, 5);
     [imsecondcanny1, ~] = cannys(imsecondedge1, tlow2, thigh2);
     
-    tlow3 = percentile(imthirdedge1, 90);
-    thigh3 = percentile(imthirdedge1, 70);
+    tlow3 = percentile(imthirdedge1, 8);
+    thigh3 = percentile(imthirdedge1, 5);
     [imthirdcanny1, ~] = cannys(imthirdedge1, tlow3, thigh3);
     
     %second im
-    tlow1 = percentile(imfirstedge2, 12);
-    thigh1 = percentile(imfirstedge2, 5);
+    tlow1 = percentile(imfirstedge2, 5);
+    thigh1 = percentile(imfirstedge2, 1);
     [imfirstcanny2, ~] = cannys(imfirstedge2, tlow1, thigh1);
     
-    tlow2 = percentile(imsecondedge2, 40);
-    thigh2 = percentile(imsecondedge2, 20);
+    tlow2 = percentile(imsecondedge2, 8);
+    thigh2 = percentile(imsecondedge2, 5);
     [imsecondcanny2, ~] = cannys(imsecondedge2, tlow2, thigh2);
     
-    tlow3 = percentile(imthirdedge2, 90);
-    thigh3 = percentile(imthirdedge2, 70);
+    tlow3 = percentile(imthirdedge2, 8);
+    thigh3 = percentile(imthirdedge2, 5);
     [imthirdcanny2, ~] = cannys(imthirdedge2, tlow3, thigh3);
     
   %match points in the image
@@ -73,13 +73,13 @@ function tempo(imb1, imb2, idx)
     
     %plot
     subplot(3, 4, 1), imshow(imb1), title('original'); hold on;
-    subplot(3, 4, 2), imshow(imfirstcanny1), title('1st e-resp'), hold on; points11.plot %mp11.plot ;
-    subplot(3, 4, 3), imshow(imsecondcanny1), title('2nd e-resp'), hold on; points12.plot %mp12.plot;
-    subplot(3, 4, 4), imshow(imthirdcanny1), title('3rd e-resp canny'), hold on; points13.plot %mp13.plot;
+    subplot(3, 4, 2), imshow(imfirstcanny1), title('1st canny'), hold on; points11.plot %mp11.plot ;
+    subplot(3, 4, 3), imshow(imsecondcanny1), title('2nd canny'), hold on; points12.plot %mp12.plot;
+    subplot(3, 4, 4), imshow(imthirdcanny1), title('3rd canny'), hold on; points13.plot %mp13.plot;
     subplot(3, 4, 5), imshow(imb2), title('original');
-    subplot(3, 4, 6), imshow(imfirstcanny2), title('1st e-resp'), hold on; points21.plot %mp21.plot;
-    subplot(3, 4, 7), imshow(imsecondcanny2), title('2nd e-resp'), hold on; points22.plot %mp22.plot;
-    subplot(3, 4, 8), imshow(imthirdcanny2), title('3rd e-resp canny'), hold on; points23.plot %mp23.plot;
+    subplot(3, 4, 6), imshow(imfirstcanny2), title('1st canny'), hold on; points21.plot %mp21.plot;
+    subplot(3, 4, 7), imshow(imsecondcanny2), title('2nd canny'), hold on; points22.plot %mp22.plot;
+    subplot(3, 4, 8), imshow(imthirdcanny2), title('3rd canny'), hold on; points23.plot %mp23.plot;
     hold off;
     
     % save the plot

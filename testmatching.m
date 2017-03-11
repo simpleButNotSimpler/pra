@@ -75,11 +75,11 @@ function pointmatching(imb1, imb2, idx)
     subplot(3, 4, 1), imshow(imb1), title('original'); hold on;
     subplot(3, 4, 2), imshow(imfirstedge1), title('1st e-resp'), hold on; points11.plot %mp11.plot ;
     subplot(3, 4, 3), imshow(imsecondedge1), title('2nd e-resp'), hold on; points12.plot %mp12.plot;
-    subplot(3, 4, 4), imshow(imthirdedge1), title('3rd e-resp canny'), hold on; points13.plot %mp13.plot;
+    subplot(3, 4, 4), imshow(imthirdedge1), title('3rd e-resp'), hold on; points13.plot %mp13.plot;
     subplot(3, 4, 5), imshow(imb2), title('original');
     subplot(3, 4, 6), imshow(imfirstedge2), title('1st e-resp'), hold on; points21.plot %mp21.plot;
     subplot(3, 4, 7), imshow(imsecondedge2), title('2nd e-resp'), hold on; points22.plot %mp22.plot;
-    subplot(3, 4, 8), imshow(imthirdedge2), title('3rd e-resp canny'), hold on; points23.plot %mp23.plot;
+    subplot(3, 4, 8), imshow(imthirdedge2), title('3rd e-resp'), hold on; points23.plot %mp23.plot;
     hold off;
     
     % save the plot

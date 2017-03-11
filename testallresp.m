@@ -14,28 +14,28 @@ function allresp(im1, idx)
 
     %convert to grayscale   
     imb = im2double(rgb2gray(im1));
+    imb = imcomplement(imb);
+%   imb = im2double(im1(:,:,3));
     
     %edge response
     imfirstedge = edgeresponse(imb, 'max'); 
-    imsecondedge = edgeresponse(imcomplement(imfirstedge), 'max');
-    temp = imcomplement(imsecondedge);
-%     imthirdedge = edgeresponse(imcomplement(imsecondedge*0.4), 'max');
-    imthirdedge = edgeresponse(temp, 'max');
+    imsecondedge = edgeresponse(imfirstedge, 'max');
+    imthirdedge = edgeresponse(imsecondedge, 'max');
     
     %canny
     %first
-    tlow = percentile(imfirstedge, 12);
+    tlow = percentile(imfirstedge,12);
     thigh = percentile(imfirstedge, 5);
     [imfirstcanny, ~] = cannys(imfirstedge, tlow, thigh);
     
     %second
-    tlow = percentile(imsecondedge, 40);
+    tlow = percentile(imsecondedge, 60);
     thigh = percentile(imsecondedge, 20);
     [imsecondcanny, ~] = cannys(imsecondedge, tlow, thigh);
     
     %third
-    tlow = percentile(imthirdedge, 60);
-    thigh = percentile(imthirdedge, 40);
+    tlow = percentile(imthirdedge, 70);
+    thigh = percentile(imthirdedge, 30);
     [imthirdcanny, ~] = cannys(imthirdedge, tlow, thigh);    
     
     %plotting

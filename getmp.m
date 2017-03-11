@@ -1,9 +1,9 @@
 function [matchedPoints1, matchedPoints2, points1, points2] = getmp(I1, I2)
     %Find the corners.
-%     points1 = detectHarrisFeatures(I1);
-%     points2 = detectHarrisFeatures(I2);
-    points1 = harriscorner(I1);
-    points2 = harriscorner(I2);
+    points1 = detectHarrisFeatures(I1);
+    points2 = detectHarrisFeatures(I2);
+%     points1 = harriscorner(I1);
+%     points2 = harriscorner(I2);
     
     %Extract the neighborhood features.
     [features1,valid_points1] = extractFeatures(I1,points1);

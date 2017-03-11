@@ -29,29 +29,29 @@ function pairedge(im1, im2, idx)
     
     %canny
     %first im
-    tlow1 = percentile(imfirstedge1, 12);
-    thigh1 = percentile(imfirstedge1, 5);
+    tlow1 = percentile(imfirstedge1, 5);
+    thigh1 = percentile(imfirstedge1, 1);
     [imfirstcanny1, ~] = cannys(imfirstedge1, tlow1, thigh1);
     
-    tlow2 = percentile(imsecondedge1, 40);
-    thigh2 = percentile(imsecondedge1, 20);
+    tlow2 = percentile(imsecondedge1, 8);
+    thigh2 = percentile(imsecondedge1, 5);
     [imfirstcanny2, ~] = cannys(imsecondedge1, tlow2, thigh2);
     
-    tlow3 = percentile(imthirdedge1, 90);
-    thigh3 = percentile(imthirdedge1, 70);
+    tlow3 = percentile(imthirdedge1, 8);
+    thigh3 = percentile(imthirdedge1, 5);
     [imfirstcanny3, ~] = cannys(imthirdedge1, tlow3, thigh3);
     
     %second im
-    tlow1 = percentile(imfirstedge2, 12);
-    thigh1 = percentile(imfirstedge2, 5);
+    tlow1 = percentile(imfirstedge2, 5);
+    thigh1 = percentile(imfirstedge2, 1);
     [imsecondcanny1, ~] = cannys(imfirstedge2, tlow1, thigh1);
     
-    tlow2 = percentile(imsecondedge2, 40);
-    thigh2 = percentile(imsecondedge2, 20);
+    tlow2 = percentile(imsecondedge2, 8);
+    thigh2 = percentile(imsecondedge2, 5);
     [imsecondcanny2, ~] = cannys(imsecondedge2, tlow2, thigh2);
     
-    tlow3 = percentile(imthirdedge2, 90);
-    thigh3 = percentile(imthirdedge2, 70);
+    tlow3 = percentile(imthirdedge2, 8);
+    thigh3 = percentile(imthirdedge2, 5);
     [imsecondcanny3, ~] = cannys(imthirdedge2, tlow3, thigh3);
     
     %edge
@@ -60,23 +60,23 @@ function pairedge(im1, im2, idx)
 %     subplot(3, 4, 1), imshow(imb1), title('original'); hold on;
 %     subplot(3, 4, 2), imshow(imfirstedge1), title('1st e-resp');
 %     subplot(3, 4, 3), imshow(imsecondedge1), title('2nd e-resp');
-%     subplot(3, 4, 4), imshow(imthirdedge1), title('3rd e-resp canny');
+%     subplot(3, 4, 4), imshow(imthirdedge1), title('3rd e-resp');
 %     subplot(3, 4, 5), imshow(imb2), title('original');
 %     subplot(3, 4, 6), imshow(imfirstedge2), title('1st e-resp');
 %     subplot(3, 4, 7), imshow(imsecondedge2), title('2nd e-resp');
-%     subplot(3, 4, 8), imshow(imthirdedge2), title('3rd e-resp canny');
+%     subplot(3, 4, 8), imshow(imthirdedge2), title('3rd e-resp');
     
     %canny
     figure('units','normalized','outerposition',[0 0 1 1]);
     set(gcf,'Visible','Off');
     subplot(3, 4, 1), imshow(imb1), title('original'); hold on;
-    subplot(3, 4, 2), imshow(imfirstcanny1), title('1st e-resp');
-    subplot(3, 4, 3), imshow(imfirstcanny2), title('2nd e-resp');
-    subplot(3, 4, 4), imshow(imfirstcanny3), title('3rd e-resp canny');
+    subplot(3, 4, 2), imshow(imfirstcanny1), title('1st canny');
+    subplot(3, 4, 3), imshow(imfirstcanny2), title('2nd canny');
+    subplot(3, 4, 4), imshow(imfirstcanny3), title('3rd canny');
     subplot(3, 4, 5), imshow(imb2), title('original');
-    subplot(3, 4, 6), imshow(imsecondcanny1), title('1st e-resp');
-    subplot(3, 4, 7), imshow(imsecondcanny2), title('2nd e-resp');
-    subplot(3, 4, 8), imshow(imsecondcanny3), title('3rd e-resp canny');
+    subplot(3, 4, 6), imshow(imsecondcanny1), title('1st canny');
+    subplot(3, 4, 7), imshow(imsecondcanny2), title('2nd canny');
+    subplot(3, 4, 8), imshow(imsecondcanny3), title('3rd canny');
 
  % save the plot
  fname = strcat('/imdemo/canny/person', num2str(idx), '.png');
